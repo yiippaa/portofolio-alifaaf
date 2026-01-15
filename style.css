@@ -1,0 +1,227 @@
+/* RESET & BODY */
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #F4F6FB;
+    color: #2E2E2E;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+/* NAVBAR */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 18px 40px;
+    background: #ffffff;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 15px;
+    padding: 0;
+    margin: 0;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: #2E2E2E;
+    font-weight: 500;
+    padding: 8px 12px;
+    border-radius: 6px;
+    transition: all 0.3s;
+}
+
+.nav-links a:hover {
+    background-color: #4F7CFF;
+    color: #fff;
+}
+
+/* BUTTONS */
+.btn-primary {
+    display: inline-block;
+    margin-top: 15px;
+    padding: 10px 20px;
+    background-color: #4F7CFF;
+    color: white;
+    border-radius: 8px;
+    text-decoration: none;
+    transition: all 0.3s;
+}
+
+.btn-primary:hover {
+    background-color: #6A8CFF;
+    transform: scale(1.05);
+    box-shadow: 0 5px 15px rgba(79,124,255,0.4);
+}
+
+/* SECTIONS (FIX UTAMA DI SINI) */
+section {
+    background: #FFFFFF;
+    padding: 80px 40px;
+    margin: 40px auto;
+    max-width: 900px;
+    border-radius: 12px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.05);
+
+    /* animasi */
+    opacity: 0;
+    transform: translateY(30px);
+    transition: all 0.8s ease-out;
+
+    /* biar gak ketutup navbar */
+    scroll-margin-top: 120px;
+}
+
+/* SECTION PERTAMA LANGSUNG MUNCUL */
+section:first-of-type {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* SECTION SAAT DI-AKTIFKAN JS */
+section.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+section {
+    /* animasi */
+    opacity: 0;
+    transform: translateY(30px);
+    transition: all 0.8s ease-out;
+
+    /* biar gak ketutup navbar */
+    scroll-margin-top: 100px;
+}
+
+
+/* ACTIVE SECTION */
+section.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* HEADINGS */
+h2 {
+    color: #4F7CFF;
+    margin-bottom: 20px;
+    font-size: 26px;
+}
+
+/* PARAGRAPH */
+section p {
+    line-height: 1.7;
+    margin-bottom: 15px;
+}
+
+/* EXPERIENCE ITEM */
+.experience-item {
+    background: #FFFFFF;
+    padding: 20px;
+    margin-bottom: 20px;
+    border-left: 5px solid #4F7CFF;
+    border-radius: 10px;
+    box-shadow: 0 6px 18px rgba(0,0,0,0.06);
+
+    opacity: 0;
+    transform: translateY(20px);
+    transition: all 0.8s ease-out;
+}
+
+.experience-item.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.experience-item span {
+    font-size: 14px;
+    color: #6B7280;
+}
+
+/* PROJECTS GRID */
+.projects-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
+}
+
+/* PROJECT CARD */
+.project-card {
+    display: flex;
+    flex-direction: column;
+    height: 100%; /* penting */
+}
+
+
+.project-card.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.project-card:hover {
+    transform: translateY(-5px);
+}
+
+.project-card img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+.project-card h3 {
+    color: #4F7CFF;
+    margin: 15px 0 10px;
+}
+
+.project-card p {
+    flex-grow: 1;
+}
+
+
+
+.project-card .btn-primary {
+    margin: 15px auto 20px;
+}
+
+
+/* CONTACT */
+#contact a {
+    color: #4F7CFF;
+    text-decoration: none;
+}
+
+#contact a:hover {
+    text-decoration: underline;
+}
+
+/* FOOTER */
+footer {
+    text-align: center;
+    padding: 20px;
+    font-size: 14px;
+    color: #6B7280;
+}
+
+/* RESPONSIVE */
+@media screen and (max-width: 768px) {
+    .navbar {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+    }
+
+    .projects-container {
+        grid-template-columns: 1fr;
+    }
+}

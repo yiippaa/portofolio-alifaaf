@@ -1,0 +1,1 @@
+<button class="certificate-btn" onclick="showCertificate('img/sertifikat-mnc.jpg')">Lihat Sertifikat</button>
